@@ -1,0 +1,39 @@
+{
+  "view": "status",
+  "layout": {
+    "type": "list-layout",
+    "children": {
+      "0": {
+        "type": "text",
+        "values": {
+          "status": {
+            "query": {
+              "model": "User",
+              "function": "select",
+              "attribute": "game_status",
+              "inputs": [
+                {
+                  "name": "id",
+                  "selectFrom": "$me"
+                }
+              ]
+            }
+          },
+          "role": {
+            "query": {
+              "model": "User",
+              "function": "select",
+              "attribute": "role",
+              "inputs": [
+                {
+                  "name": "id",
+                  "selectFrom": "$me"
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

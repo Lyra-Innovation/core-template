@@ -1,0 +1,23 @@
+{
+  "type": "setup-page",
+  "values": {
+    "title": "views.game.play.condolences.title",
+    "description": "views.game.play.condolences.description"
+  },
+  "children": {
+    "0": {
+      "type": "list-layout",
+      "children": {
+        "0": {
+          "type": "button",
+          "values": {
+            "href": "/game/:$me/home",
+            "text": "views.game.play.reward.keep-playing",
+            "class": "bottom-card-action",
+            "appearance": "raised"            
+          }
+        }
+      }
+    }
+  }
+}

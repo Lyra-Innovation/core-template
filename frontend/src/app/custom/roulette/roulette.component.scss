@@ -1,0 +1,24 @@
+
+.animateRouletteRotate {
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-out;
+  animation-name: rouletteRotate;
+  transform-origin: 50% 52.3%;
+}
+
+@keyframes rouletteRotate {
+  0% {}
+  60% {
+    transform: rotate(250deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.play-title {
+  color: white;
+  font-weight: 900;
+  font-size: 24px;
+}

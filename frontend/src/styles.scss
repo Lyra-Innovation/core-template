@@ -1,0 +1,304 @@
+/* You can add global styles to this file, and also import other style files */
+@import './theme.scss';
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$candy-app-primary: mat-palette($my-green, 100, 50, 200);
+$candy-app-accent: mat-palette($my-blue, 100, 50, 200);
+
+// The warn palette is optional (defaults to red).
+$candy-app-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$candy-app-theme: mat-light-theme(
+  $candy-app-primary,
+  $candy-app-accent,
+  $candy-app-warn
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($candy-app-theme);
+
+@font-face {
+  font-family: Futura;
+  src: url('/assets/Futura-Light.ttf') format('truetype');
+  font-weight: normal;
+}
+
+* {
+  font-family: Futura, Trebuchet MS, Arial, sans-serif;
+}
+
+.renderer-paragraph,
+.renderer-content-title,
+.renderer-content-subtitle {
+  font-family: Arial;
+}
+
+.renderer-paragraph {
+  opacity: 0.7;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+/** GLOBALS */
+.accent-color {
+  color: mat-color($candy-app-accent) !important;
+}
+
+.renderer-button:not(.renderer-fab-button):not(.renderer-icon-button) {
+  min-width: 8em !important;
+  border-radius: 20px;
+}
+
+ren-toolbar:not(.small-toolbar) {
+  margin-bottom: 0 !important;
+
+  .renderer-toolbar {
+    position: absolute;
+    height: 40vh;
+    padding-top: 18px;
+
+    div {
+      align-self: start;
+    }
+  }
+}
+
+ren-toolbar:not(.small-toolbar) + * {
+  margin-top: 72px;
+  z-index: 10;
+}
+ren-toolbar:not(.small-toolbar) + ren-tabs,
+ren-toolbar:not(.small-toolbar) + ren-card {
+  padding-top: 0 !important;
+  z-index: 10;
+}
+ren-toolbar:not(.small-toolbar) + ren-form-steps {
+  padding-top: 0 !important;
+  z-index: 10;
+  ren-setup-page > ren-card {
+    padding-top: 0 !important;
+  }
+}
+
+.renderer-list-item {
+  width: 100%;
+}
+
+.renderer-button[disabled] {
+  background-color: #e0e0e0 !important;
+}
+
+.bottom-card-action,
+.renderer-dialog-actions {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.cdk-overlay-pane {
+  position: relative !important;
+  min-width: 46vh;
+}
+
+.renderer-card,
+.mat-dialog-container {
+  border-radius: 4vh !important;
+}
+
+ren-card {
+  padding: 20px !important;
+}
+
+ren-form-steps > ren-setup-page {
+  height: 100%;
+  ren-card {
+    flex-grow: 1;
+  }
+}
+
+ren-setup-page > ren-card {
+  min-height: 95%;
+  padding-bottom: 40px !important;
+
+  .renderer-card {
+    flex-grow: 1;
+  }
+}
+.mat-list-item {
+  height: auto !important;
+  padding: 10px 0 !important;
+}
+
+.renderer-mobile-shell {
+  background-color: #f6f5f9;
+}
+
+.mat-dialog-container {
+  padding: 20px !important;
+}
+
+.mat-step-icon {
+  height: 50px !important;
+  width: 50px !important;
+}
+
+.mat-vertical-content-container {
+  height: 0;
+  margin-left: 50px !important;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+ren-breadcrumbs {
+  font-size: 14px;
+}
+
+.center-card {
+  margin-top: 25vh;
+}
+
+/** GAME */
+
+.rounded-panel {
+  background: url('/assets/green1.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position-y: 9vh;
+  color: white;
+
+  .renderer-label {
+    font-weight: 900;
+    font-size: 18px;
+  }
+}
+
+.rounded-panel,
+.rounded-panel > div {
+  width: 100%;
+  place-content: space-evenly !important;
+  align-items: center !important;
+}
+
+.user-item-not-owned {
+  opacity: 0.6;
+}
+
+.user-item-bar {
+  .mat-button {
+    padding: 0 !important;
+  }
+
+  .renderer-image {
+    height: 128px !important;
+    width: 128px !important;
+  }
+}
+
+.rounded-panel > :nth-child(2),
+.rounded-panel > div ren-button:nth-child(2) {
+  margin-bottom: 52px;
+}
+
+.user-item-type {
+  .renderer-image {
+    height: 96px !important;
+    width: 96px !important;
+  }
+}
+
+/** VIEWS */
+
+.view-login {
+  ren-card {
+    bottom: 3vh;
+    position: absolute;
+  }
+  .renderer-toolbar {
+    background: url(/assets/header.png);
+    background-size: cover;
+  }
+  ren-list-layout {
+    overflow: visible;
+  }
+  .renderer-image {
+    margin-top: -16vh !important;
+    height: 30vh !important;
+    width: 30vh !important;
+  }
+}
+
+.view-game-home {
+  min-height: 596px;
+}
+
+.view-game-pick {
+  ren-list-layout,
+  .renderer-scrollable > ren-list-layout,
+  div {
+    display: flex !important;
+  }
+  ren-list-layout.renderer-fill > div {
+    width: 100%;
+    height: 100%;
+  }
+  ren-list-layout > div > ren-card {
+    padding-top: 0 !important;
+  }
+  ren-list-layout {
+    overflow: visible;
+  }
+}
+
+.view-game-play {
+  ren-form-steps {
+    overflow: hidden;
+    align-items: start;
+
+    ren-list-layout > div {
+      flex-grow: 1;
+    }
+    ren-setup-page ren-card {
+      min-height: auto;
+    }
+  }
+}
+
+.game-card {
+  padding: 4px !important;
+
+  .renderer-image {
+    margin-bottom: 8px !important;
+    object-fit: cover !important;
+    height: 26vh !important;
+    width: 17vh !important;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+      0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.renderer-sidenav {
+  width: 40vh;
+  .renderer-button {
+    font-size: 18px;
+  }
+}

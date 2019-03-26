@@ -1,0 +1,17 @@
+{
+  "type": "list-layout",
+  "values": {
+    "selectedGame": {
+      "scope": "global",
+      "select": "pickedGame"
+    },
+    "filterChildrenBy": {
+      "filter": "key => key === values.selectedGame"
+    }
+  },
+  "children": {
+    "views.game.play.games.memory": "import game/play/memory-game",
+    "views.game.play.games.questions": "import game/play/questions-game",
+    "views.game.play.games.zop": "import game/play/zop-game"
+  }
+}

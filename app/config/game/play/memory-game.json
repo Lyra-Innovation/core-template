@@ -1,0 +1,29 @@
+{
+  "type": "minigame",
+  "values": {
+    "time": "150000"
+  },
+  "events": {
+    "gameFinished": [
+      {
+        "bubble": "submitPage",
+        "params": {
+          "win": "$event.win"
+        }
+      }
+    ],
+    "gameWinned": [
+      {
+        "bubble": "goToPage",
+        "params": {
+          "pageIndex": 2
+        }
+      }
+    ]
+  },
+  "children": {
+    "game": {
+      "type": "memory"
+    }
+  }
+}

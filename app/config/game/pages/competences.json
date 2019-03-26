@@ -1,0 +1,122 @@
+{
+  "view": "game-competences",
+  "baseRoute": "game/:gameuserid",
+  "layout": {
+    "route": "competences",
+    "type": "list-layout",
+    "values": {
+      "scrollable": "true"
+    },
+    "children": {
+      "0": {
+        "type": "toolbar",
+        "values": {
+          "backButton": "true",
+          "title": "views.game.home.items"
+        }
+      },
+      "1": {
+        "type": "list-layout",
+        "children": {
+          "0": {
+            "type": "card",
+            "children": {
+              "0": {
+                "type": "list-layout",
+                "children": {
+                  "1": {
+                    "type": "image",
+                    "values": {
+                      "class": "user-item-type",
+                      "src": "/assets/competencias_1.png",
+                      "legend": "globals.competences"
+                    }
+                  },
+                  "2": {
+                    "multiple": true,
+                    "type": "slider",
+                    "values": {
+                      "controlName": {
+                        "query": {
+                          "model": "UserItem",
+                          "function": "select",
+                          "attribute": "item_id",
+                          "inputs": [
+                            {
+                              "name": "item",
+                              "value": "competence"
+                            },
+                            {
+                              "name": "user_id",
+                              "selectFrom": {
+                                "scope": "route",
+                                "select": "gameuserid"
+                              }
+                            }
+                          ],
+                          "build": {
+                            "join": "'competences', 'user_items.item_id', '=', 'competences.id'",
+                            "get": ""
+                          }
+                        }
+                      },
+                      "initialValue": {
+                        "query": {
+                          "model": "UserItem",
+                          "function": "select",
+                          "attribute": "level",
+                          "inputs": [
+                            {
+                              "name": "item",
+                              "value": "competence"
+                            },
+                            {
+                              "name": "user_id",
+                              "selectFrom": {
+                                "scope": "route",
+                                "select": "gameuserid"
+                              }
+                            }
+                          ],
+                          "build": {
+                            "join": "'competences', 'user_items.item_id', '=', 'competences.id'",
+                            "get": ""
+                          }
+                        }
+                      },
+                      "label": {
+                        "query": {
+                          "model": "UserItem",
+                          "function": "select",
+                          "attribute": "name",
+                          "inputs": [
+                            {
+                              "name": "item",
+                              "value": "competence"
+                            },
+                            {
+                              "name": "user_id",
+                              "selectFrom": {
+                                "scope": "route",
+                                "select": "gameuserid"
+                              }
+                            }
+                          ],
+                          "build": {
+                            "join": "'competences', 'user_items.item_id', '=', 'competences.id'",
+                            "get": ""
+                          }
+                        }
+                      },
+                      "disabled": "true"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

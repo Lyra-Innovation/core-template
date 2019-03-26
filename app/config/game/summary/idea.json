@@ -1,0 +1,123 @@
+{
+  "type": "list-layout",
+  "values": {
+    "align": "center start"
+  },
+  "children": {
+    "0": {
+      "type": "text",
+      "values": {
+        "align": "left",
+        "title": "views.game.profile.idea-name",
+        "text": {
+          "query": {
+            "model": "User",
+            "function": "select",
+            "attribute": "idea_title",
+            "inputs": [
+              {
+                "name": "id",
+                "selectFrom": {
+                  "scope": "route",
+                  "select": "gameuserid"
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "1": {
+      "type": "text",
+      "values": {
+        "align": "left",
+        "title": "views.game.profile.idea-description",
+        "text": {
+          "query": {
+            "model": "User",
+            "function": "select",
+            "attribute": "idea_description",
+            "inputs": [
+              {
+                "name": "id",
+                "selectFrom": {
+                  "scope": "route",
+                  "select": "gameuserid"
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "2": {
+      "type": "text",
+      "values": {
+        "align": "left",
+        "title": "views.game.profile.idea-value",
+        "text": {
+          "query": {
+            "model": "User",
+            "function": "select",
+            "attribute": "idea_value",
+            "inputs": [
+              {
+                "name": "id",
+                "selectFrom": {
+                  "scope": "route",
+                  "select": "gameuserid"
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "3": {
+      "type": "text",
+      "values": {
+        "align": "left",
+        "title": "views.game.profile.idea-needs",
+        "text": {
+          "query": {
+            "model": "User",
+            "function": "select",
+            "attribute": "idea_needs",
+            "inputs": [
+              {
+                "name": "id",
+                "selectFrom": {
+                  "scope": "route",
+                  "select": "gameuserid"
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "4": {
+      "type": "text",
+      "values": {
+        "align": "left",
+        "title": "views.game.profile.idea-clients",
+        "text": {
+          "query": {
+            "model": "User",
+            "function": "select",
+            "attribute": "idea_clients",
+            "inputs": [
+              {
+                "name": "id",
+                "selectFrom": {
+                  "scope": "route",
+                  "select": "gameuserid"
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

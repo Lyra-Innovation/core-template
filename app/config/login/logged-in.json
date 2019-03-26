@@ -1,0 +1,13 @@
+{
+  "view": "logged-in",
+  "baseRoute": "",
+  "layout": {
+    "route": "loggedIn",
+    "type": "list-layout",
+    "children": {
+      "0": {
+        "type": "text"
+      }
+    }
+  }
+}

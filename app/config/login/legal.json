@@ -1,0 +1,37 @@
+{
+  "type": "list-layout",
+  "values": {
+    "direction": "row",
+    "gap": "0"
+  },
+  "children": {
+    "0": {
+      "type": "text",
+      "values": {
+        "text": "CORE.globals.legal.legal-notice",
+        "href": ""
+      }
+    },
+    "1": {
+      "type": "text",
+      "values": {
+        "text": "CORE.globals.legal.privacy-policy",
+        "href": ""
+      }
+    },
+    "2": {
+      "type": "text",
+      "values": {
+        "text": "CORE.globals.legal.cookies-policy",
+        "href": ""
+      }
+    },
+    "3": {
+      "type": "text",
+      "values": {
+        "text": "CORE.globals.legal.conditions-of-use",
+        "href": ""
+      }
+    }
+  }
+}

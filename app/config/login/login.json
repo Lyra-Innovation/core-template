@@ -1,0 +1,62 @@
+{
+  "view": "login",
+  "baseRoute": "",
+  "layout": {
+    "route": "login",
+    "type": "list-layout",
+    "values": {
+      "scrollable": "true"
+    },
+    "children": {
+      "0": {
+        "type": "toolbar"
+      },
+      "1": {
+        "type": "card",
+        "children": {
+          "0": {
+            "type": "list-layout",
+            "values": {
+              "gap": "0"
+            },
+            "children": {
+              "0": {
+                "type": "image",
+                "values": {
+                  "src": "/assets/actio_icon.png"
+                }
+              },
+              "1": {
+                "type": "list-layout",
+                "children": {
+                  "0": {
+                    "type": "form-steps",
+                    "children": {
+                      "0": "import login/welcome",
+                      "1": {
+                        "type": "login",
+                        "events": {
+                          "login": [
+                            {
+                              "action": "LoginAction",
+                              "params": {
+                                "username": "$event.userid",
+                                "password": "$event.password",
+                                "redirectUrl": "/loggedIn"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  "1": "import login/legal"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "type": "list-layout",
+  "values": {
+    "class": "renderer-fill",
+    "gap": "0"
+  },
+  "children": {
+    "0": {
+      "type": "text",
+      "values": {
+        "text": "views.game.home.items",
+        "type": "page-subtitle"
+      }
+    },
+    "1": {
+      "type": "list-layout",
+      "values": {
+        "class": "user-item-bar rounded-panel renderer-fill",
+        "direction": "row",
+        "gap": "0"
+      },
+      "children": {
+        "0": {
+          "type": "button",
+          "values": {
+            "href": "../resources",
+            "color": "white"
+          },
+          "children": {
+            "0": {
+              "type": "image",
+              "values": {
+                "type": "avatar",
+                "src": "/assets/recursos_1.png",
+                "legend": "globals.resources"
+              }
+            }
+          }
+        },
+        "1": {
+          "type": "button",
+          "values": {
+            "href": "../allies",
+            "color": "white"
+          },
+          "children": {
+            "0": {
+              "type": "image",
+              "values": {
+                "src": "/assets/aliados_1.png",
+                "legend": "globals.allies"
+              }
+            }
+          }
+        },
+        "2": {
+          "type": "button",
+          "values": {
+            "href": "../competences",
+            "color": "white"
+          },
+          "children": {
+            "0": {
+              "type": "image",
+              "values": {
+                "type": "avatar",
+                "src": "/assets/competencias_1.png",
+                "legend": "globals.competences"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

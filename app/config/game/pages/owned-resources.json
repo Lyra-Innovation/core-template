@@ -1,0 +1,97 @@
+{
+  "owned": {
+    "multiple": true,
+    "type": "image",
+    "values": {
+      "type": "avatar",
+      "legend": {
+        "query": {
+          "attribute": "name",
+          "class": "GameItemInfo",
+          "function": "selectOwned",
+          "inputs": [
+            {
+              "name": "user_id",
+              "selectFrom":  {
+                "scope": "route",
+                "select": "gameuserid"
+              }
+            },
+            {
+              "name": "type",
+              "value": "resource"
+            }
+          ]
+        }
+      },
+      "src": {
+        "query": {
+          "attribute": "image",
+          "class": "GameItemInfo",
+          "function": "selectOwned",
+          "inputs": [
+            {
+              "name": "user_id",
+              "selectFrom":  {
+                "scope": "route",
+                "select": "gameuserid"
+              }
+            },
+            {
+              "name": "type",
+              "value": "resource"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "notowned": {
+    "multiple": true,
+    "type": "image",
+    "values": {
+      "class": "user-item-not-owned",
+      "type": "avatar",
+      "legend": {
+        "query": {
+          "attribute": "name",
+          "class": "GameItemInfo",
+          "function": "selectNotOwned",
+          "inputs": [
+            {
+              "name": "user_id",
+              "selectFrom":  {
+                "scope": "route",
+                "select": "gameuserid"
+              }
+            },
+            {
+              "name": "type",
+              "value": "resource"
+            }
+          ]
+        }
+      },
+      "src": {
+        "query": {
+          "attribute": "image",
+          "class": "GameItemInfo",
+          "function": "selectNotOwned",
+          "inputs": [
+            {
+              "name": "user_id",
+              "selectFrom":  {
+                "scope": "route",
+                "select": "gameuserid"
+              }
+            },
+            {
+              "name": "type",
+              "value": "resource"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

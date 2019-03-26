@@ -1,0 +1,62 @@
+{
+  "type": "list-layout",
+  "values": {
+    "class": "renderer-fill",
+    "gap": "0"
+  },
+  "children": {
+    "0": {
+      "type": "card",
+      "children": {
+        "0": {
+          "type": "list-layout",
+          "values": {
+            "class": "renderer-fill",
+            "gap": "8px"
+          },
+          "children": {
+            "0": {
+              "type": "text",
+              "values": {
+                "text": "views.game.play.pick-card",
+                "type": "page-subtitle"
+              }
+            },
+            "1": {
+              "type": "card-picker",
+              "values": {
+                "picks": {
+                  "query": {
+                    "attribute": "cards",
+                    "class": "CardPicker",
+                    "function": "pickCard",
+                    "inputs": [
+                      {
+                        "name": "user_id",
+                        "selectFrom": "$me"
+                      }
+                    ]
+                  }
+                },
+                "games": {
+                  "query": {
+                    "attribute": "games",
+                    "class": "CardPicker",
+                    "function": "pickCard",
+                    "inputs": [
+                      {
+                        "name": "user_id",
+                        "selectFrom": "$me"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "1": "import game/user-items-bar"
+  }
+}

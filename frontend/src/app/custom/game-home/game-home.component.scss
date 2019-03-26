@@ -1,0 +1,44 @@
+::ng-deep .roulette {
+  .renderer-card,
+  .renderer-button {
+    height: 100%;
+    padding: 0;
+  }
+
+  ren-button,
+  .renderer-button {
+    width: 100%;
+  }
+
+  .renderer-button {
+    margin-top: -22px;
+    position: absolute;
+    left: 0;
+    height: 48vh;
+  }
+
+  .mat-card {
+    padding: 0;
+    height: 46vh;
+  }
+}
+
+.roulette {
+  height: 0;
+  width: 100%;
+  padding: 4vh !important;
+  padding-top: 3vh !important;
+}
+
+::ng-deep .not-roulette {
+  .renderer-button {
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: 0 !important;
+    transform: translate(-50%, -50%);
+    width: 14em !important;
+    height: 4em !important;
+  }
+}

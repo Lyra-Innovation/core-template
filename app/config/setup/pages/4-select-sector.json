@@ -1,0 +1,63 @@
+{
+  "type": "setup-page",
+  "values": {
+    "imageSrc": "/assets/sigue_los_pasos.png",
+    "title": "views.setup.4-select-sector.title",
+    "description": "views.setup.4-select-sector.explanation"
+  },
+  "children": {
+    "0": {
+      "type": "selection-grid",
+      "values": {
+        "ids": {
+          "isList": true,
+          "query": {
+            "model": "Sector",
+            "function": "select",
+            "attribute": "id"
+          }
+        },
+        "images": {
+          "isList": true,
+          "query": {
+            "model": "Sector",
+            "function": "select",
+            "attribute": "image"
+          }
+        },
+        "dialogTitle": {
+          "isList": true,
+          "query": {
+            "model": "Sector",
+            "function": "select",
+            "attribute": "name"
+          }
+        },
+        "dialogText": {
+          "isList": true,
+          "query": {
+            "model": "Sector",
+            "function": "select",
+            "attribute": "name"
+          }
+        }
+      }
+    },
+    "1": {
+      "type": "button",
+      "values": {
+        "class": "bottom-card-action",
+        "color": "white",
+        "appearance": "raised",
+        "text": "CORE.globals.back"
+      },
+      "events": {
+        "click": [
+          {
+            "bubble": "previousPage"
+          }
+        ]
+      }
+    }
+  }
+}

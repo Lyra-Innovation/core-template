@@ -1,0 +1,202 @@
+{
+  "CORE": {
+    "components": {
+      "file-uploader": {
+        "pick-file": "Seleccionar fichero",
+        "no-file-selected": "No hay ningún fichero seleccionado"
+      },
+      "login": {
+        "username": "Usuario",
+        "email": "Correo electrónico",
+        "password": "Contraseña",
+        "login-button": "Login"
+      },
+      "minigame": {
+        "remaining-time": "Tiempo restante",
+        "score": "Puntuación"
+      },
+      "error": {
+        "default-message": "Error cargando la página, inténtalo de nuevo"
+      },
+      "games": {
+        "questions": {
+          "answer": "Responder"
+        }
+      }
+    },
+    "globals": {
+      "default-input-error-message": "El valor introducido es incorrecto",
+      "default-empty-error-message": "El campo es obligatorio",
+      "send": "enviar",
+      "next": "siguiente",
+      "accept": "aceptar",
+      "select": "seleccionar",
+      "cancel": "cancelar",
+      "back": "atrás",
+      "create": "crear",
+      "connection-error": "Error de conexión",
+      "empty": "No hay ningún elemento en esta colección",
+      "legal": {
+        "contact": "Contáctanos",
+        "legal-notice": "Nota legal",
+        "privacy-policy": "Política de privacidad",
+        "cookies-policy": "Política de Cookies",
+        "conditions-of-use": "Condiciones de uso"
+      },
+      "login": {
+        "failed": "Login incorrecto",
+        "logout": "Salir"
+      },
+      "admin": {
+        "user-created": "Usuario creado"
+      }
+    }
+  },
+  "views": {
+    "admin": {
+      "create-user": "Crear nuevo usuario",
+      "active-dinamizers": "Dinamizadores",
+      "create-dinamizer": "Crear dinamizador",
+      "error-creating-user": "Error al crear el usuario"
+    },
+    "login": {
+      "welcome": {
+        "title": "¡Te damos la bienvenida a la versión online de ACTIO!",
+        "what-is-actio": "¿Qué es ACTIO?"
+      }
+    },
+    "setup": {
+      "title": "Setup",
+      "0-profile": {
+        "title": "¡Completa tu perfil!",
+        "explanation": "Es la primera vez que juegas a Actio y necesitamos conocerte. ¡Pon a prueba tu capacidad de presentarte!",
+        "name": "Nombre (nickname)",
+        "description": "Descripción visible",
+        "photo": "Seleccionar foto"
+      },
+      "1-presentation": {
+        "title": "¿Y ahora?  Sigue los pasos",
+        "explanation": "Antes de empezar tu partida, completa los detalles de tu perfil e idea y espera a que tu dinamizador lo valide",
+        "step-1": "Mi perfil",
+        "step-2": "Selección del sector",
+        "step-3": "Definición de la idea"
+      },
+      "2-competences": {
+        "title": "Competencias",
+        "explanation": "Completa las competencias que ya tienes"
+      },
+      "4-select-sector": {
+        "title": "Selecciona tu sector",
+        "explanation": "Los sectores de las ideas nos dan pistas sobre… selecciona a qué sector pertenece la tuya!"
+      },
+      "5-idea-description": {
+        "title": "Describe tu idea",
+        "explanation": "Los sectores de las ideas nos dan pistas sobre selecciona a qué sector pertenece la tuya!",
+        "idea-title": "Título de la idea",
+        "idea-description": "Descripción:"
+      },
+      "6-idea-needs": {
+        "title": "Necesidad a la que responde",
+        "explanation": "Introduce a que necesidad existente en la sociedad da respuesta tu idea"
+      },
+      "7-idea-value": {
+        "title": "Valor diferencial",
+        "explanation": "¿Qué diferencia tu idea con productos similares ya existentes?"
+      },
+      "8-idea-clients": {
+        "title": "Clientela potencial",
+        "explanation": "Describe a qué clientes quiere llegar tu idea"
+      },
+      "breadcrumbs": {
+        "description": "Descripción",
+        "needs": "Necesidad",
+        "value": "Diferencial",
+        "clients": "Clientela"
+      },
+      "initial-setup": "Configuración inicial"
+    },
+    "game": {
+      "home": {
+        "title": "Mi partida",
+        "items": "¿Qué tienes?",
+        "summary": "Resumen",
+        "validate": "Validar",
+        "play": "Jugar"
+      },
+      "play": {
+        "games": {
+          "memory": "Memory",
+          "questions": "Pregunta",
+          "zop": "Candy Crush"
+        },
+        "title": "Jugada",
+        "pick-card": "¡Elige!",
+        "get-card": "¡Consigue tu carta!",
+        "challenge": "Tu reto es este...",
+        "try": "¡Lo intento!",
+        "reward": {
+          "title": "¡Carta conseguida!",
+          "description": "¿Qué opinas de esta carta?",
+          "keep-playing": "Seguir jugando"
+        },
+        "condolences": {
+          "title": "No ha podido ser...",
+          "description": "¡Inténtalo de nuevo!"
+        }
+      },
+      "profile": {
+        "title": "Perfil",
+        "idea-name": "Nombre de la idea",
+        "idea-description": "Descripción de la idea",
+        "idea-value": "Valor de la idea",
+        "idea-needs": "Necesidades que la idea cubre",
+        "idea-clients": "Clientes a los que la idea va dirigida"
+      },
+      "history": {
+        "title": "Historial",
+        "comment": "Comentario"
+      },
+      "validate": {
+        "progress": "¿Cómo lo llevas?",
+        "explanation": "¡Si crees que ya lo tienes todo y puedes poner a prueba tu idea, hazla validable!",
+        "ready": "¿Porqué crees que ya está lista?"
+      },
+      "finished": {
+        "congratulations": "¡Felicidades!",
+        "explanation": "Has ganado el juego"
+      },
+      "states": {
+        "pending-init": "No iniciado",
+        "pending-validation": "Validar setup",
+        "playing": "Jugando",
+        "pending-review": "Validar partida",
+        "finished": "Acabado"
+      }
+    },
+    "dynamizer": {
+      "title": "Partidas activas",
+      "create": "Create",
+      "conclusion-validate": "Ver conclusión y validar",
+      "validate": "Validar",
+      "dynamizer-title": "Validación de la partida",
+      "dynamizer-explanation": "Esta es la conclusión del usuario:",
+      "pending-init-validation-disabled": "No se pueden validar partidas no empezadas",
+      "game-of": "Partida de {{name}}",
+      "back-active-games": "Volver a partidas activas"
+    },
+    "validation": {
+      "waiting": "Esperando validación del dinamizador...",
+      "setup": "Podrás empezar a jugar cuando el dinamizador valide tu partida",
+      "game": "El dinamizador está revisando tu progreso",
+      "goToGame": "Ir a la partida",
+      "validated": "Partida validada",
+      "requested": "Validación pedida!",
+      "not-requested": "No se ha pedido la validación de partida"
+    }
+  },
+  "globals": {
+    "resources": "Recursos",
+    "allies": "Aliados",
+    "competences": "Competencias"
+  }
+}

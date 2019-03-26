@@ -1,0 +1,43 @@
+{
+  "view": "waiting-game-validation",
+  "baseRoute": "game/:gameuserid",
+  "layout": {
+    "route": "waiting-game-validation",
+    "type": "list-layout",
+    "children": {
+      "0": {
+        "type": "toolbar",
+        "children": {
+          "0": "import admin/logout"
+        }
+      },
+      "1": {
+        "type": "card",
+        "values": {
+          "class": "center-card"
+        },
+        "children": {
+          "0": {
+            "type": "list-layout",
+            "children": {
+              "0": {
+                "type": "text",
+                "values": {
+                  "text": "views.validation.waiting",
+                  "type": "page-title"
+                }
+              },
+              "1": {
+                "type": "text",
+                "values": {
+                  "text": "views.validation.game",
+                  "type": "page-subtitle"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

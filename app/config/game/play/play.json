@@ -1,0 +1,64 @@
+{
+  "view": "game-play",
+  "baseRoute": "game/:gameuserid",
+  "layout": {
+    "route": "play",
+    "type": "list-layout",
+    "children": {
+      "0": {
+        "type": "toolbar",
+        "values": {
+          "title": "views.game.play.title",
+          "align": "center"
+        }
+      },
+      "1": {
+        "type": "form-steps",
+        "events": {
+          "formSubmitted": [
+            {
+              "action": "ModelAction",
+              "params": {
+                "action": "create",
+                "model": "UserItem",
+                "params": {
+                  "user_id": "$me",
+                  "item_id": {
+                    "scope": "global",
+                    "select": "pickedItemId"
+                  },
+                  "item": {
+                    "scope": "global",
+                    "select": "pickedItemType"
+                  },
+                  "item_comment": "$event[2].comment"
+                },
+                "successActions": [
+                  {
+                    "action": "NavigateRoute",
+                    "params": {
+                      "route": "/game/:$me/home"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "children": {
+          "0": {
+            "type": "card",
+            "values": {
+              "class": "renderer-fill"
+            },
+            "children": {
+              "0": "import game/play/1-minigame"
+            }
+          },
+          "1": "import game/play/2-condolences",
+          "2": "import game/play/3-rewards"
+        }
+      }
+    }
+  }
+}

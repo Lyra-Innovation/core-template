@@ -1,0 +1,227 @@
+<ren-sidenav mode="over" fxFill (logout)="logout()" [logoutButton]="true">
+  <ren-custom-child-template childKey="left-sidenav">
+    <ren-list type="nav">
+      <ren-custom-child-template childKey="0">
+        <ren-button
+          text="views.game.profile.title"
+          icon="person"
+          href="../profile"
+          color="white"
+        ></ren-button>
+      </ren-custom-child-template>
+      <ren-custom-child-template childKey="1">
+        <ren-button
+          text="views.game.history.title"
+          icon="ballot"
+          href="../history"
+          color="white"
+        ></ren-button>
+      </ren-custom-child-template>
+      <ren-custom-child-template childKey="2" *ngIf="!dinamizerMode() && !isFinished()">
+        <ng-container *ngTemplateOutlet="requestDialogTemplate"></ng-container>
+      </ren-custom-child-template>
+      <ren-custom-child-template childKey="3" *ngIf="dinamizerMode()">
+        <ren-button
+          text="views.dynamizer.back-active-games"
+          icon="launch"
+          href="/dynamizer"
+          color="white"
+        ></ren-button>
+      </ren-custom-child-template>
+    </ren-list>
+  </ren-custom-child-template>
+
+  <ren-custom-child-template childKey="content">
+    <div fxFill fxLayout="column" fxLayoutAlign="space-between center">
+      <ren-toolbar
+        [title]="
+          dinamizerMode()
+            ? ('views.dynamizer.game-of' | translate: { name: userName })
+            : 'views.game.home.title'
+        "
+        [menu]="true"
+        (bubble)="bubble.emit($event)"
+      >
+      </ren-toolbar>
+
+      <ren-card fxFlex class="roulette">
+        <ng-container *ngIf="!dinamizerMode()">
+          <ren-button fxFlex href="../pick" *ngIf="!isFinished()">
+            <act-roulette fxFlex> </act-roulette>
+          </ren-button>
+          <div
+            *ngIf="isFinished()"
+            fxFlex
+            fxLayout="column"
+            fxLayoutAlign="center center"
+            fxLayoutGap="20px"
+          >
+            <ren-image src="/assets/carta_conseguida.png" type="page-subtitle"></ren-image>
+            <ren-text
+              text="views.game.finished.congratulations"
+              type="page-title"
+            ></ren-text>
+            <ren-text
+              text="views.game.finished.explanation"
+              type="page-subtitle"
+            ></ren-text>
+          </div>
+        </ng-container>
+
+        <ng-container *ngIf="dinamizerMode()">
+          <ng-container
+            *ngTemplateOutlet="validateDialogTemplate"
+          ></ng-container>
+        </ng-container>
+      </ren-card>
+
+      <ren-text text="views.game.home.items" type="page-subtitle"></ren-text>
+
+      <div
+        fxLayout="row"
+        class="rounded-panel user-item-bar"
+        fxLayoutAlign="center center"
+      >
+        <ren-button href="../resources" color="white">
+          <ren-image
+            src="/assets/recursos_1.png"
+            legend="globals.resources"
+            type="avatar"
+          ></ren-image>
+        </ren-button>
+
+        <ren-button href="../allies" color="white">
+          <ren-image
+            src="/assets/aliados_1.png"
+            legend="globals.allies"
+            type="avatar"
+          ></ren-image>
+        </ren-button>
+
+        <ren-button href="../competences" color="white">
+          <ren-image
+            src="/assets/competencias_1.png"
+            legend="globals.competences"
+            type="avatar"
+          ></ren-image>
+        </ren-button>
+      </div>
+    </div>
+  </ren-custom-child-template>
+</ren-sidenav>
+
+<ng-template #requestDialogTemplate>
+  <ren-dialog-launcher #requestDialog>
+    <ren-custom-child-template childKey="launcher">
+      <ren-button
+        *ngIf="!dinamizerMode()"
+        text="views.game.home.validate"
+        icon="check_circle"
+        color="white"
+      ></ren-button>
+    </ren-custom-child-template>
+
+    <ren-custom-child-template childKey="content">
+      <ren-list-layout>
+        <ren-text
+          type="page-title"
+          text="views.game.validate.progress"
+        ></ren-text>
+        <ren-text text="views.game.validate.explanation"></ren-text>
+
+        <ren-text
+          type="content-title"
+          text="views.game.validate.ready"
+        ></ren-text>
+
+        <ren-textarea
+          (valueChanges)="reason = $event"
+          appearance="outline"
+        ></ren-textarea>
+
+        <div
+          fxLayout="row"
+          [fxLayoutGap]="MEDIUM_GAP"
+          fxLayoutAlign="center center"
+          class="renderer-dialog-actions"
+        >
+          <ren-button
+            (click)="requestDialog.dialogRef.close()"
+            appearance="raised"
+            color="white"
+            text="CORE.globals.cancel"
+          ></ren-button>
+
+          <ren-button
+            (click)="requestValidation()"
+            [disabled]="!reason"
+            appearance="raised"
+            text="CORE.globals.send"
+          ></ren-button>
+        </div>
+      </ren-list-layout>
+    </ren-custom-child-template>
+  </ren-dialog-launcher>
+</ng-template>
+
+<ng-template #validateDialogTemplate>
+  <ren-dialog-launcher #validateDialog [disabled]="!isValidationRequested()">
+    <ren-custom-child-template childKey="launcher">
+      <div class="not-roulette">
+        <ren-button
+          appearance="raised"
+          [text]="
+            gameStatus === 1
+              ? 'views.dynamizer.validate'
+              : 'views.dynamizer.conclusion-validate'
+          "
+          [disabled]="!isValidationRequested()"
+          [matTooltip]="
+            !isValidationRequested()
+              ? ('views.validation.not-requested' | translate)
+              : null
+          "
+        >
+        </ren-button>
+      </div>
+    </ren-custom-child-template>
+
+    <ren-custom-child-template childKey="content">
+      <ren-list-layout>
+        <ren-text
+          type="page-title"
+          text="views.dynamizer.dynamizer-title"
+        ></ren-text>
+
+        <ng-container *ngIf="gameStatus === 3">
+          <ren-text
+            type="content-title"
+            text="views.dynamizer.dynamizer-explanation"
+          ></ren-text>
+
+          <ren-text [text]="userComment"></ren-text>
+        </ng-container>
+
+        <div
+          fxLayout="row"
+          [fxLayoutGap]="MEDIUM_GAP"
+          fxLayoutAlign="center center"
+          class="renderer-dialog-actions"
+        >
+          <ren-button
+            (click)="validateDialog.dialogRef.close()"
+            appearance="raised"
+            color="white"
+            text="CORE.globals.cancel"
+          ></ren-button>
+
+          <ren-button
+            (click)="validate()"
+            appearance="raised"
+            text="views.game.home.validate"
+          ></ren-button>
+        </div>
+      </ren-list-layout>
+    </ren-custom-child-template>
+  </ren-dialog-launcher>
+</ng-template>

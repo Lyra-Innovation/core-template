@@ -1,0 +1,9 @@
+[submodule "backend"]
+	path = backend
+	url = https://github.com/Lyra-Innovation/laravel-template.git
+[submodule "frontend/projects/presenter"]
+	path = frontend/projects/presenter
+	url = https://github.com/Lyra-Innovation/presenter
+[submodule "frontend/projects/renderer"]
+	path = frontend/projects/renderer
+	url = https://github.com/Lyra-Innovation/renderer

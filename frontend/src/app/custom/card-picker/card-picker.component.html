@@ -1,0 +1,65 @@
+<div class="scene" fxLayout="row" fxLayoutGap="8px" (click)="showCards = true">
+  <ng-container *ngFor="let pick of picks; let idx = index">
+    <div [ngClass]="'card ' + (showCards ? 'is-flipped' : '')">
+      <div
+        class="card-face card-front"
+        fxLayout="column"
+        fxLayoutGap="8px"
+        fxLayoutAlign="center center"
+        style="overflow: visible"
+      >
+        <ren-image class="game-card" [src]="placeholders[idx]"></ren-image>
+        <ren-text text="&nbsp;"></ren-text>
+      </div>
+      <div
+        class="card-face card-back"
+        style="overflow: visible"
+        fxLayout="column"
+        fxLayoutGap="8px"
+        fxLayoutAlign="center center"
+      >
+        <ren-dialog-launcher
+          #dialog
+          class="game-card"
+          fxLayoutAlign="start start"
+        >
+          <ren-custom-child-template childKey="launcher">
+            <ren-image
+              [src]="pick.image"
+              objectFit="cover"
+              class="game-card"
+            ></ren-image>
+          </ren-custom-child-template>
+          <ren-custom-child-template childKey="content">
+            <div fxLayout="column" [fxLayoutGap]="XL_GAP">
+              <ren-text text="views.game.play.get-card"></ren-text>
+              <ren-text text="views.game.play.challenge"></ren-text>
+
+              <ren-text [text]="games[idx]" type="label"></ren-text>
+
+              <div
+                fxLayout="row"
+                [fxLayoutGap]="MEDIUM_GAP"
+                class="renderer-dialog-actions"
+              >
+                <ren-button
+                  (click)="closeDialog(idx, $event)"
+                  text="CORE.globals.back"
+                  appearance="raised"
+                  color="white"
+                ></ren-button>
+                <ren-button
+                  (click)="pickCard(idx)"
+                  text="views.game.play.try"
+                  appearance="raised"
+                ></ren-button>
+              </div>
+            </div>
+          </ren-custom-child-template>
+        </ren-dialog-launcher>
+
+        <ren-text fxFlex [text]="pick.name"></ren-text>
+      </div>
+    </div>
+  </ng-container>
+</div>

@@ -1,0 +1,32 @@
+{
+  "type": "list-layout",
+  "values": {
+    "class": "bottom-card-action",
+    "direction": "row"
+  },
+  "children": {
+    "0": {
+      "type": "button",
+      "events": {
+        "click": [
+          {
+            "bubble": "CloseDialog"
+          }
+        ]
+      },
+      "values": {
+        "text": "CORE.globals.cancel",
+        "appearance": "raised",
+        "color": "white"
+      }
+    },
+    "1": {
+      "type": "button",
+      "values": {
+        "text": "CORE.globals.create",
+        "appearance": "raised",
+        "type": "submit"
+      }
+    }
+  }
+}

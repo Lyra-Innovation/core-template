@@ -1,0 +1,23 @@
+{
+  "type": "setup-page",
+  "values": {
+    "imageSrc": "/assets/sigue_los_pasos.png",
+    "title": "views.setup.1-presentation.title",
+    "description": "views.setup.1-presentation.explanation"
+  },
+  "children": {
+    "0": {
+      "type": "form-group",
+      "children": {
+        "0": {
+          "type": "stepper",
+          "values": {
+            "labels": "views.setup.1-presentation.step-1,views.setup.1-presentation.step-2,views.setup.1-presentation.step-3",
+            "direction": "vertical"
+          }
+        },
+        "1": "import setup/pages/form-buttons"
+      }
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "view": "setup",
+  "baseRoute": "",
+  "layout": {
+    "route": "setup",
+    "type": "list-layout",
+    "values": {
+      "scrollable": "true"
+    },
+    "children": {
+      "0": {
+        "type": "toolbar",
+        "values": {
+          "title": "views.setup.title",
+          "align": "center"
+        }
+      },
+      "1": {
+        "type": "form-steps",
+        "events": {
+          "formSubmitted": [
+            {
+              "action": "ModelAction",
+              "params": {
+                "action": "update",
+                "model": "User",
+                "params": {
+                  "description": "$event[0].description",
+                  "sector_id": "$event[4]",
+                  "idea_title": "$event[5].name",
+                  "idea_description": "$event[5].description",
+                  "idea_needs": "$event[6].needs",
+                  "idea_value": "$event[7].value",
+                  "idea_clients": "$event[8].clients",
+                  "game_status": "1",
+                  "image": "$event[0].image.content"
+                },
+                "where": {
+                  "id": "$me"
+                }
+              }
+            },
+            {
+              "action": "ModelAction",
+              "params": {
+                "action": "create",
+                "batch": true,
+                "model": "UserItem",
+                "params": "Object.keys($event[2]).reduce((col, ele) => [...col, { 'item_id': ele, 'user_id': $me, 'item_comment' : '', 'level': $event[2][ele], 'item': 'competence' }], [])",
+                "successActions": [
+                  {
+                    "action": "NavigateRoute",
+                    "params": {
+                      "route": "/game/:$me/waiting-setup-validation"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "children": {
+          "0": "import setup/pages/0-profile",
+          "1": "import setup/pages/1-presentation",
+          "2": "import setup/pages/2-competences",
+          "4": "import setup/pages/4-select-sector",
+          "5": "import setup/pages/5-idea-description",
+          "6": "import setup/pages/6-idea-needs",
+          "7": "import setup/pages/7-idea-value",
+          "8": "import setup/pages/8-idea-clients"
+        }
+      }
+    }
+  }
+}

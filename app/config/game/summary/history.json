@@ -1,0 +1,269 @@
+{
+  "view": "game-history",
+  "baseRoute": "game/:gameuserid",
+  "layout": {
+    "route": "history",
+    "type": "list-layout",
+    "values": {
+      "scrollable": "true"
+    },
+    "children": {
+      "0": {
+        "type": "toolbar",
+        "values": {
+          "backButton": "true",
+          "title": "views.game.history.title"
+        }
+      },
+      "1": {
+        "type": "card",
+        "children": {
+          "0": {
+            "type": "list",
+            "values": {
+              "orderChildrenBy": {
+                "compare": "(comp1, comp2) => new Date(comp1.timestamp).valueOf() - new Date(comp2.timestamp).valueOf()"
+              }
+            },
+            "children": {
+              "competences": {
+                "type": "history-item",
+                "multiple": true,
+                "values": {
+                  "title1": {
+                    "query": {
+                      "model": "UserItem",
+                      "function": "select",
+                      "attribute": "name",
+                      "inputs": [
+                        {
+                          "name": "user_id",
+                          "selectFrom": {
+                            "scope": "route",
+                            "select": "gameuserid"
+                          }
+                        },
+                        {
+                          "name": "item",
+                          "value": "competence"
+                        }
+                      ],
+                      "build": {
+                        "join": "'competences', 'user_items.item_id', '=', 'competences.id'",
+                        "get": "['competences.*', 'user_items.*', 'user_items.created_at as gained_at']"
+                      }
+                    }
+                  },
+                  "label2": {
+                    "query": {
+                      "model": "UserItem",
+                      "function": "select",
+                      "attribute": "item_comment",
+                      "inputs": [
+                        {
+                          "name": "user_id",
+                          "selectFrom": {
+                            "scope": "route",
+                            "select": "gameuserid"
+                          }
+                        },
+                        {
+                          "name": "item",
+                          "value": "competence"
+                        }
+                      ],
+                      "build": {
+                        "join": "'competences', 'user_items.item_id', '=', 'competences.id'",
+                        "get": "['competences.*', 'user_items.*', 'user_items.created_at as gained_at']"
+                      }
+                    }
+                  },
+                  "timestamp": {
+                    "query": {
+                      "model": "UserItem",
+                      "function": "select",
+                      "attribute": "gained_at",
+                      "inputs": [
+                        {
+                          "name": "user_id",
+                          "selectFrom": {
+                            "scope": "route",
+                            "select": "gameuserid"
+                          }
+                        },
+                        {
+                          "name": "item",
+                          "value": "competence"
+                        }
+                      ],
+                      "build": {
+                        "join": "'competences', 'user_items.item_id', '=', 'competences.id'",
+                        "get": "['competences.*', 'user_items.*', 'user_items.created_at as gained_at']"
+                      }
+                    }
+                  }
+                }
+              },
+              "resources": {
+                "type": "history-item",
+                "multiple": true,
+                "values": {
+                  "title1": {
+                    "query": {
+                      "model": "UserItem",
+                      "function": "select",
+                      "attribute": "name",
+                      "inputs": [
+                        {
+                          "name": "user_id",
+                          "selectFrom": {
+                            "scope": "route",
+                            "select": "gameuserid"
+                          }
+                        },
+                        {
+                          "name": "item",
+                          "value": "resource"
+                        }
+                      ],
+                      "build": {
+                        "join": "'resources', 'user_items.item_id', '=', 'resources.id'",
+                        "get": "['resources.*', 'user_items.*', 'user_items.created_at as gained_at']"
+                      }
+                    }
+                  },
+                  "label2": {
+                    "query": {
+                      "model": "UserItem",
+                      "function": "select",
+                      "attribute": "item_comment",
+                      "inputs": [
+                        {
+                          "name": "user_id",
+                          "selectFrom": {
+                            "scope": "route",
+                            "select": "gameuserid"
+                          }
+                        },
+                        {
+                          "name": "item",
+                          "value": "resource"
+                        }
+                      ],
+                      "build": {
+                        "join": "'resources', 'user_items.item_id', '=', 'resources.id'",
+                        "get": "['resources.*', 'user_items.*', 'user_items.created_at as gained_at']"
+                      }
+                    }
+                  },
+                  "timestamp": {
+                    "query": {
+                      "model": "UserItem",
+                      "function": "select",
+                      "attribute": "gained_at",
+                      "inputs": [
+                        {
+                          "name": "user_id",
+                          "selectFrom": {
+                            "scope": "route",
+                            "select": "gameuserid"
+                          }
+                        },
+                        {
+                          "name": "item",
+                          "value": "resource"
+                        }
+                      ],
+                      "build": {
+                        "join": "'resources', 'user_items.item_id', '=', 'resources.id'",
+                        "get": "['resources.*', 'user_items.*', 'user_items.created_at as gained_at']"
+                      }
+                    }
+                  }
+                }
+              },
+              "allies": {
+                "type": "history-item",
+                "multiple": true,
+                "values": {
+                  "title1": {
+                    "query": {
+                      "model": "UserItem",
+                      "function": "select",
+                      "attribute": "name",
+                      "inputs": [
+                        {
+                          "name": "user_id",
+                          "selectFrom": {
+                            "scope": "route",
+                            "select": "gameuserid"
+                          }
+                        },
+                        {
+                          "name": "item",
+                          "value": "allie"
+                        }
+                      ],
+                      "build": {
+                        "join": "'allies', 'user_items.item_id', '=', 'allies.id'",
+                        "get": "['allies.*', 'user_items.*', 'user_items.created_at as gained_at']"
+                      }
+                    }
+                  },
+                  "label2": {
+                    "query": {
+                      "model": "UserItem",
+                      "function": "select",
+                      "attribute": "item_comment",
+                      "inputs": [
+                        {
+                          "name": "user_id",
+                          "selectFrom": {
+                            "scope": "route",
+                            "select": "gameuserid"
+                          }
+                        },
+                        {
+                          "name": "item",
+                          "value": "allie"
+                        }
+                      ],
+                      "build": {
+                        "join": "'allies', 'user_items.item_id', '=', 'allies.id'",
+                        "get": "['allies.*', 'user_items.*', 'user_items.created_at as gained_at']"
+                      }
+                    }
+                  },
+                  "timestamp": {
+                    "query": {
+                      "model": "UserItem",
+                      "function": "select",
+                      "attribute": "gained_at",
+                      "inputs": [
+                        {
+                          "name": "user_id",
+                          "selectFrom": {
+                            "scope": "route",
+                            "select": "gameuserid"
+                          }
+                        },
+                        {
+                          "name": "item",
+                          "value": "allie"
+                        }
+                      ],
+                      "build": {
+                        "join": "'allies', 'user_items.item_id', '=', 'allies.id'",
+                        "get": "['allies.*', 'user_items.*', 'user_items.created_at as gained_at']"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

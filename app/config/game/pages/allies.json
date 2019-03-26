@@ -1,0 +1,44 @@
+{
+  "view": "game-allies",
+  "baseRoute": "game/:gameuserid",
+  "layout": {
+    "route": "allies",
+    "type": "list-layout",
+    "values": {
+      "scrollable": "true"
+    },
+    "children": {
+      "0": {
+        "type": "toolbar",
+        "values": {
+          "class": "small-toolbar",
+          "backButton": "true",
+          "title": "views.game.home.items"
+        }
+      },
+      "2": {
+        "type": "list-layout",
+        "values": {
+          "class": "rounded-panel renderer-fill"
+        },
+        "children": {
+          "0": {
+            "type": "image",
+            "values": {
+              "src": "/assets/aliados_1.png",
+              "class": "user-item-type",
+              "legend": "globals.allies"
+            }
+          },
+          "1": {
+            "type": "grid-list",
+            "values": {
+              "rowHeight": "120px"
+            },
+            "children": "import game/pages/owned-allies"
+          }
+        }
+      }
+    }
+  }
+}

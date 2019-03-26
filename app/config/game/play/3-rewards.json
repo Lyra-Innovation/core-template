@@ -1,0 +1,80 @@
+{
+  "type": "setup-page",
+  "values": {
+    "imageSrc": "/assets/carta_conseguida.png",
+    "title": "views.game.play.reward.title"
+  },
+  "children": {
+    "content": {
+      "type": "form-group",
+      "children": {
+        "0": {
+          "type": "image",
+          "values": {
+            "class": "game-card",
+            "src": {
+              "scope": "global",
+              "select": "pickedItemImage"
+            },
+            "legend": {
+              "scope": "global",
+              "select": "pickedItemName"
+            }
+          }
+        },
+        "1": {
+          "type": "text",
+          "values": {
+            "text": "views.game.play.reward.description",
+            "type": "page-subtitle"
+          }
+        },
+        "2": {
+          "type": "textarea",
+          "values": {
+            "rows": "2",
+            "appearance": "outline",
+            "controlName": "comment",
+            "validators": "Validators.required",
+            "initialValue": {
+              "query": {
+                "model": "UserItem",
+                "function": "select",
+                "attribute": "item_comment",
+                "inputs": [
+                  {
+                    "name": "user_id",
+                    "selectFrom": "$me"
+                  },
+                  {
+                    "name": "item_id",
+                    "selectFrom": {
+                      "scope": "global",
+                      "select": "pickedItemId"
+                    }
+                  },
+                  {
+                    "name": "item",
+                    "selectFrom": {
+                      "scope": "global",
+                      "select": "pickedItemType"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "3": {
+          "type": "button",
+          "values": {
+            "class": "bottom-card-action",
+            "text": "views.game.play.reward.keep-playing",
+            "type": "submit",
+            "appearance": "raised"
+          }
+        }
+      }
+    }
+  }
+}

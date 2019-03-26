@@ -1,0 +1,39 @@
+{
+  "type": "setup-page",
+  "values": {
+    "imageSrc": "/assets/competencias.png",
+    "title": "views.setup.2-competences.title",
+    "description": "views.setup.2-competences.explanation"
+  },
+  "children": {
+    "0": {
+      "type": "form-group",
+      "children": {
+        "0": {
+          "multiple": true,
+          "type": "slider",
+          "values": {
+            "max": "6",
+            "controlName": {
+              "query": {
+                "model": "Competence",
+                "function": "select",
+                "attribute": "id",
+                "inputs": []
+              }
+            },
+            "label": {
+              "query": {
+                "model": "Competence",
+                "function": "select",
+                "attribute": "name",
+                "inputs": []
+              }
+            }
+          }
+        },
+        "1-button": "import setup/pages/form-buttons"
+      }
+    }
+  }
+}

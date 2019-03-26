@@ -1,0 +1,63 @@
+{
+  "view": "game-home",
+  "baseRoute": "game/:gameuserid",
+  "layout": {
+    "route": "home",
+    "type": "game-home",
+    "values": {
+      "gameStatus": {
+        "query": {
+          "model": "User",
+          "function": "select",
+          "attribute": "game_status",
+          "inputs": [
+            {
+              "name": "id",
+              "selectFrom": {
+                "scope": "route",
+                "select": "gameuserid"
+              }
+            }
+          ]
+        }
+      },
+      "userName": {
+        "query": {
+          "model": "User",
+          "function": "select",
+          "attribute": "name",
+          "inputs": [
+            {
+              "name": "id",
+              "selectFrom": {
+                "scope": "route",
+                "select": "gameuserid"
+              }
+            }
+          ]
+        }
+      },
+      "userId": {
+        "scope": "route",
+        "select": "gameuserid"
+      },
+      "myUserId": "$me",
+      "userComment": {
+        "query": {
+          "model": "User",
+          "function": "select",
+          "attribute": "comment_validation",
+          "inputs": [
+            {
+              "name": "id",
+              "selectFrom": {
+                "scope": "route",
+                "select": "gameuserid"
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

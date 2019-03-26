@@ -1,0 +1,76 @@
+{
+  "type": "dialog-launcher",
+  "values": {},
+  "children": {
+    "launcher": {
+      "type": "button",
+      "values": {
+        "type": "button",
+        "icon": "add",
+        "appearance": "fab"
+      }
+    },
+    "content": {
+      "type": "form-group",
+      "values": {},
+      "events": {
+        "formSubmitted": [
+          {
+            "bubble": "CloseDialog"
+          },
+          {
+            "action": "ModelAction",
+            "params": {
+              "action": "create",
+              "model": "user",
+              "params": {
+                "name": "$event.username",
+                "password": "$event.password",
+                "user_responsable_id": "$me",
+                "role": 1,
+                "game_status": "-1"
+              },
+              "successActions": [
+                {
+                  "action": "ShowNotification",
+                  "params": {
+                    "message": "CORE.globals.admin.user-created"
+                  }
+                }
+              ],
+              "errorMessage": "views.admin.error-creating-user"
+            }
+          }
+        ]
+      },
+      "children": {
+        "0": {
+          "type": "text",
+          "values": {
+            "text": "views.admin.create-user",
+            "type": "page-title"
+          }
+        },
+        "1": {
+          "type": "input",
+          "values": {
+            "label": "CORE.components.login.username",
+            "validators": "Validators.required",
+            "type": "text",
+            "controlName": "username"
+          }
+        },
+        "2": {
+          "type": "input",
+          "values": {
+            "label": "CORE.components.login.password",
+            "validators": "Validators.required",
+            "type": "text",
+            "controlName": "password"
+          }
+        },
+        "3": "import common/dialog-actions"
+      }
+    }
+  }
+}

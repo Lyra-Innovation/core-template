@@ -1,0 +1,46 @@
+{
+  "view": "game-resources",
+  "baseRoute": "game/:gameuserid",
+  "layout": {
+    "route": "resources",
+    "type": "list-layout",
+    "values": {
+      "scrollable": "true",
+      "gap": "16px"
+    },
+    "children": {
+      "0": {
+        "type": "toolbar",
+        "values": {
+          "class": "small-toolbar",
+          "backButton": "true",
+          "title": "views.game.home.items"
+        }
+      },
+      "2": {
+        "type": "list-layout",
+        "values": {
+          "class": "rounded-panel renderer-fill",
+          "gap": "16px"
+        },
+        "children": {
+          "0": {
+            "type": "image",
+            "values": {
+              "class": "user-item-type",
+              "src": "/assets/recursos_1.png",
+              "legend": "globals.resources"
+            }
+          },
+          "3": {
+            "type": "grid-list",
+            "values": {
+              "rowHeight": "120px"
+            },
+            "children": "import game/pages/owned-resources"
+          }
+        }
+      }
+    }
+  }
+}

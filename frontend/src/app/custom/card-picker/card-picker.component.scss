@@ -1,0 +1,53 @@
+.full-image {
+  display: flex !important;
+  padding: 14px !important;
+  cursor: pointer;
+}
+
+::ng-deep .full-image .renderer-card {
+  overflow: hidden;
+  padding: 0 !important;
+}
+
+::ng-deep ren-dialog-launcher {
+  display: flex;
+
+  ren-card {
+    padding: 4px !important;
+    height: 26vh;
+    width: 16vh;
+  }
+}
+
+::ng-deep ren-dialog-launcher > div {
+  display: flex;
+}
+
+.scene {
+  min-height: 37vh !important;
+  perspective: 600px;
+  height: 100%;
+  width: 100%;
+}
+
+.card {
+  width: 100%;
+  position: relative;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.card-face {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+.card.is-flipped {
+  transform: rotateY(180deg);
+}

@@ -1,0 +1,78 @@
+{
+  "view": "game-profile",
+  "baseRoute": "game/:gameuserid",
+  "layout": {
+    "route": "profile",
+    "type": "list-layout",
+    "children": {
+      "0": {
+        "type": "toolbar",
+        "values": {
+          "backButton": "true",
+          "title": "views.game.profile.title"
+        }
+      },
+      "1": {
+        "type": "card",
+        "children": {
+          "0": {
+            "type": "profile",
+            "values": {
+              "name": {
+                "query": {
+                  "model": "User",
+                  "function": "select",
+                  "attribute": "name",
+                  "inputs": [
+                    {
+                      "name": "id",
+                      "selectFrom": {
+                        "scope": "route",
+                        "select": "gameuserid"
+                      }
+                    }
+                  ]
+                }
+              },
+              "description": {
+                "query": {
+                  "model": "User",
+                  "function": "select",
+                  "attribute": "description",
+                  "inputs": [
+                    {
+                      "name": "id",
+                      "selectFrom": {
+                        "scope": "route",
+                        "select": "gameuserid"
+                      }
+                    }
+                  ]
+                }
+              },
+              "imageSrc": {
+                "query": {
+                  "model": "User",
+                  "function": "select",
+                  "attribute": "image",
+                  "inputs": [
+                    {
+                      "name": "id",
+                      "selectFrom": {
+                        "scope": "route",
+                        "select": "gameuserid"
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            "children": {
+              "content": "import game/summary/idea"
+            }
+          }
+        }
+      }
+    }
+  }
+}

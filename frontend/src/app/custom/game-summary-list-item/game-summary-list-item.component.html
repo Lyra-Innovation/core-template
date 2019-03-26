@@ -1,0 +1,44 @@
+<div
+  fxFlex
+  (click)="beginValidation()"
+  fxLayout="row"
+  fxLayoutAlign="center center"
+  [fxLayoutGap]="MEDIUM_GAP"
+>
+  <span fxFlex>{{ name }}</span>
+
+  <div fxLayout="column" fxLayoutGap="12px" fxLayoutAlign="center center">
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="12px">
+      <div
+        fxLayout="row"
+        fxLayoutAlign="center center"
+        [matTooltip]="'globals.allies' | translate"
+      >
+        <span>{{ allies }}</span>
+        <ren-image type="icon" src="/assets/aliados_1.png"></ren-image>
+      </div>
+      <div
+        fxLayout="row"
+        fxLayoutAlign="center center"
+        [matTooltip]="'globals.resources' | translate"
+      >
+        <span>{{ resources }}</span>
+        <ren-image type="icon" src="/assets/recursos_1.png"></ren-image>
+      </div>
+      <div
+        fxLayout="row"
+        fxLayoutAlign="center center"
+        [matTooltip]="'globals.competences' | translate"
+      >
+        <span>{{ competences | number: '1.0-0' }}%</span>
+        <ren-image type="icon" src="/assets/competencias_1.png"></ren-image>
+      </div>
+    </div>
+
+    <mat-chip-list style="width: 10em;">
+      <mat-chip style="width: 100%; text-align: center;">{{
+        status | translate
+      }}</mat-chip>
+    </mat-chip-list>
+  </div>
+</div>

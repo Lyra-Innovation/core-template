@@ -1,0 +1,32 @@
+{
+  "type": "list-layout",
+  "values": {
+    "direction": "row",
+    "class": "bottom-card-action"
+  },
+  "children": {
+    "0": {
+      "type": "button",
+      "values": {
+        "color": "white",
+        "appearance": "raised",
+        "text": "CORE.globals.back"
+      },
+      "events": {
+        "click": [
+          {
+            "bubble": "previousPage"
+          }
+        ]
+      }
+    },
+    "1": {
+      "type": "button",
+      "values": {
+        "type": "submit",
+        "appearance": "raised",
+        "text": "CORE.globals.next"
+      }
+    }
+  }
+}

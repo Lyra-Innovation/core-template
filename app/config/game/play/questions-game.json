@@ -1,0 +1,74 @@
+{
+  "type": "minigame",
+  "values": {
+    "time": "150000"
+  },
+  "events": {
+    "gameFinished": [
+      {
+        "bubble": "submitPage",
+        "params": {
+          "win": "$event.win"
+        }
+      }
+    ],
+    "gameWinned": [
+      {
+        "bubble": "goToPage",
+        "params": {
+          "pageIndex": 2
+        }
+      }
+    ]
+  },
+  "children": {
+    "game": {
+      "type": "questions-game",
+      "values": {
+        "question": "Question",
+        "answersIds": {
+          "isList": true,
+          "query": {
+            "model": "Answer",
+            "function": "select",
+            "attribute": "id",
+            "inputs": [
+              {
+                "name": "question_id",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        "answers": {
+          "isList": true,
+          "query": {
+            "model": "Answer",
+            "function": "select",
+            "attribute": "answer",
+            "inputs": [
+              {
+                "name": "question_id",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        "correct": {
+          "isList": true,
+          "query": {
+            "model": "Answer",
+            "function": "select",
+            "attribute": "correct",
+            "inputs": [
+              {
+                "name": "question_id",
+                "value": "1"
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

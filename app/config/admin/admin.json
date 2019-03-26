@@ -1,0 +1,73 @@
+{
+  "view": "admin",
+  "baseRoute": "",
+  "layout": {
+    "route": "admin",
+    "type": "list-layout",
+    "values": {
+      "scrollable": "true"
+    },
+    "children": {
+      "0": {
+        "type": "toolbar",
+        "values": {
+          "title": "views.admin.active-dinamizers"
+        },
+        "children": {
+          "0": "import admin/logout"
+        }
+      },
+      "1": {
+        "type": "card",
+        "children": {
+          "0": {
+            "type": "list",
+            "children": {
+              "1-dinamizers": {
+                "multiple": true,
+                "type": "dynamizer-list-item",
+                "values": {
+                  "name": {
+                    "query": {
+                      "model": "User",
+                      "function": "select",
+                      "attribute": "name",
+                      "inputs": [
+                        {
+                          "name": "user_responsable_id",
+                          "selectFrom": "$me"
+                        }
+                      ],
+                      "build": {
+                        "withCount": "'users'",
+                        "get" : ""
+                      }
+                    }
+                  },
+                  "games": {
+                    "query": {
+                      "model": "User",
+                      "function": "select",
+                      "attribute" : "users_count",
+                      "inputs": [
+                        {
+                          "name": "user_responsable_id",
+                          "selectFrom": "$me"
+                        }
+                      ],
+                      "build": {
+                        "withCount": "'users'",
+                        "get" : ""
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "2": "import admin/create-dynamizer-fab"
+    }
+  }
+}

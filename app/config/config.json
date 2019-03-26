@@ -1,0 +1,18 @@
+{
+  "login": "import login/login",
+  "logged-in": "import login/logged-in",
+  "setup": "import setup/setup",
+  "game-home": "import game/home",
+  "game-resources": "import game/pages/resources",
+  "game-allies": "import game/pages/allies",
+  "game-competences": "import game/pages/competences",
+  "game-history": "import game/summary/history",
+  "game-profile": "import game/summary/profile",
+  "game-pick": "import game/play/pick",
+  "game-play": "import game/play/play",
+  "dynamizer": "import admin/dynamizer",
+  "admin": "import admin/admin",
+  "waiting-setup-validation": "import game/validation/setup",
+  "waiting-game-validation": "import game/validation/game",
+  "status": "import status"
+}

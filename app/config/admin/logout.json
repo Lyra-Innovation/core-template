@@ -1,0 +1,13 @@
+{
+  "type": "button",
+  "values": {
+    "text": "CORE.globals.login.logout",
+    "icon": "launch",
+    "color": "white"
+  },
+  "events": {
+    "click": [{
+      "action": "LogoutAction"
+    }]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "type": "setup-page",
+  "values": {
+    "imageSrc": "/assets/idea.png",
+    "title": "views.setup.7-idea-value.title",
+    "description": "views.setup.7-idea-value.explanation"    
+  },
+  "children": {
+    "0": {
+      "type": "form-group",
+      "values": {},
+      "children": {
+        "0": {
+          "type": "breadcrumbs",
+          "values": {
+            "activeIndex": "2",
+            "breadcrumbs": "views.setup.breadcrumbs.description,views.setup.breadcrumbs.needs,views.setup.breadcrumbs.value,views.setup.breadcrumbs.clients"
+          }
+        },
+        "1": {
+          "type": "textarea",
+          "values": {
+            "validators": "Validators.required",
+            "controlName": "value"
+          }
+        },
+        "2": "import setup/pages/form-buttons"
+      }
+    }
+  }
+}

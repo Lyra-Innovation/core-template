@@ -1,0 +1,21 @@
+{
+  "view": "game-pick",
+  "baseRoute": "game/:gameuserid",
+  "layout": {
+    "route": "pick",
+    "type": "list-layout",
+    "values": {
+      "scrollable": "true"
+    },
+    "children": {
+      "0": {
+        "type": "toolbar",
+        "values": {
+          "backButton": "true",
+          "title": "views.game.play.title"
+        }
+      },
+      "1": "import game/play/0-pick-card"
+    }
+  }
+}

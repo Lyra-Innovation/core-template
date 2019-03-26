@@ -1,0 +1,38 @@
+{
+  "type": "list-layout",
+  "children": {
+    "0": {
+      "type": "text",
+      "values": {
+        "text": "views.login.welcome.title"
+      }
+    },
+    "1": {
+      "type": "text",
+      "values": {
+        "text": "views.login.welcome.what-is-actio"
+      }
+    },
+    "2": {
+      "type": "button",
+      "events": {
+        "click": [
+          {
+            "bubble": "submitPage"
+          }
+        ]
+      },
+      "values": {
+        "text": "CORE.components.login.login-button",
+        "appearance": "raised"
+      }
+    },
+    "3": {
+      "type": "button",
+      "values": {
+        "text": "CORE.globals.legal.contact",
+        "href": "/contact"
+      }
+    }
+  }
+}

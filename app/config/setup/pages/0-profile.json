@@ -1,0 +1,49 @@
+{
+  "type": "setup-page",
+  "values": {
+    "imageSrc": "/assets/completa_tu_perfil.png",
+    "title": "views.setup.0-profile.title",
+    "description": "views.setup.0-profile.explanation"
+  },
+  "children": {
+    "0": {
+      "type": "form-group",
+      "children": {
+        "0": {
+          "type": "input",
+          "values": {
+            "label": "views.setup.0-profile.name",
+            "validators": "Validators.required",
+            "controlName": "name"
+          }
+        },
+        "1": {
+          "type": "textarea",
+          "values": {
+            "label": "views.setup.0-profile.description",
+            "validators": "Validators.required",
+            "controlName": "description",
+            "rows": "2"
+          }
+        },
+        "2": {
+          "type": "file-uploader",
+          "values": {
+            "fabIcon": "add",
+            "label": "views.setup.0-profile.photo",
+            "controlName": "image"
+          }
+        },
+        "3": {
+          "type": "button",
+          "values": {
+            "type": "submit",
+            "class": "bottom-card-action",
+            "appearance": "raised",
+            "text": "CORE.globals.next"
+          }
+        }
+      }
+    }
+  }
+}
